@@ -41,7 +41,9 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.use('/vehicles', vehicleRouter);
-
+app.use('/', (req, res)=>{
+  res.end('ok');
+});
 
 var PORT = 3000;
 
