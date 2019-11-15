@@ -1,0 +1,10 @@
+var http = require('http');
+var app = require('../index');
+
+var PORT = 3000;
+
+var server = http.createServer(app);
+
+server.listen(PORT, function() {
+    console.log('Server Started at Port :: ' + PORT);
+})
