@@ -11,7 +11,7 @@ const uri = "mongodb+srv://admin:admin@cluster0-ur5rd.gcp.mongodb.net/applicatio
 //   console.log(data);
 //   client.close();
 // });
-
+var http = require('http');
 var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
@@ -43,6 +43,11 @@ app.use(bodyParser.json())
 app.use('/vehicles', vehicleRouter);
 
 
-module.exports = app;
+var PORT = 3000;
 
+var server = http.createServer(app);
+
+server.listen(PORT, function() {
+    console.log('Server Started at Port :: ' + PORT);
+})
 
